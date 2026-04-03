@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Prince Home Made Cakes and Chocolates — Handcrafted with love by Arpita Pradip Singh. Custom birthday cakes, anniversary cakes, and premium homemade chocolates." />
+  <meta name="keywords" content="homemade cakes, custom cakes, homemade chocolates, birthday cake, anniversary cake, Arpita Pradip Singh" />
+  <meta name="author" content="Arpita Pradip Singh" />
+  <meta property="og:title" content="Prince Home Made Cakes and Chocolates" />
+  <meta property="og:description" content="Handcrafted cakes and chocolates made with love and the finest ingredients." />
+  <title>Prince Home Made Cakes & Chocolates | Handcrafted with Love</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>" />
+</head>
+<body class="loading">
+
+  <!-- ─── Scroll Progress Bar ──────────────────────────────── -->
+  <div id="scroll-progress"></div>
+
+  <!-- ─── Custom Cursor ───────────────────────────────────── -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ─── Cart Notification ───────────────────────────────── -->
+  <div class="cart-notification" id="cartNotification">
+    <span class="cart-notif-icon">🛒</span>
+    <div>
+      <div class="cart-notif-text">Added to order!</div>
+      <div class="cart-notif-sub">We'll get in touch to confirm.</div>
+    </div>
+  </div>
+
+  <!-- ─── Confetti Container ──────────────────────────────── -->
+  <div class="confetti-container" id="confettiContainer"></div>
+
+  <!-- ─── Loading Screen ──────────────────────────────────── -->
+  <div id="loading-screen">
+    <span class="loader-cake">🎂</span>
+    <div class="loader-brand">Prince Home Made<br/>Cakes &amp; Chocolates</div>
+    <div class="loader-script">Handcrafted with Love ✨</div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar"></div>
+    </div>
+    <div class="loader-text">Preparing your sweet experience…</div>
+  </div>
+
+  <!-- ─── Announcement Bar ────────────────────────────────── -->
+  <div id="announcement-bar">
+    <div class="announcement-text">
+      <span class="ann-icons"><span>🎂</span><span>🍫</span><span>✨</span></span>
+      <span>Freshly homemade with love &amp; the finest ingredients —</span>
+      <span class="highlight">Free Custom Message on Every Cake!</span>
+      <span>🎉 Order Now &amp; Get <strong>15% Off</strong> on your First Order — Use code <strong>WELCOME15</strong></span>
+      <span class="ann-icons"><span>🍰</span><span>🎁</span><span>💖</span></span>
+    </div>
+  </div>
+
+  <!-- ─── Navigation ──────────────────────────────────────── -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo" aria-label="Prince Home Made Cakes home">
+        <div class="nav-logo-icon" aria-hidden="true">🎂</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Prince Cakes</span>
+          <span class="nav-logo-sub">Homemade with Love</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="nav-links" role="list">
+        <a href="#hero"        class="nav-link" role="listitem">Home</a>
+        <a href="#about"       class="nav-link" role="listitem">About</a>
+        <a href="#products"    class="nav-link" role="listitem">Products</a>
+        <a href="#offers"      class="nav-link" role="listitem">Offers</a>
+        <a href="#gallery"     class="nav-link" role="listitem">Gallery</a>
+        <a href="#testimonials"class="nav-link" role="listitem">Reviews</a>
+        <a href="#faq"         class="nav-link" role="listitem">FAQ</a>
+        <a href="#contact"     class="nav-link" role="listitem">Contact</a>
+      </div>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <label class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">
+          <input type="checkbox" id="themeToggle" role="switch" aria-checked="false" />
+          <div class="toggle-track">
+            <div class="toggle-thumb" id="toggleThumb">☀️</div>
+          </div>
+          <div class="toggle-icons"><span>☀️</span><span>🌙</span></div>
+        </label>
+        <a href="#contact" class="btn-nav-order">Order Now 🎂</a>
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <!-- Mobile Nav Drawer -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
+    <a href="#hero"         class="nav-link" data-close-mobile>Home</a>
+    <a href="#about"        class="nav-link" data-close-mobile>About</a>
+    <a href="#products"     class="nav-link" data-close-mobile>Products</a>
+    <a href="#offers"       class="nav-link" data-close-mobile>Offers</a>
+    <a href="#gallery"      class="nav-link" data-close-mobile>Gallery</a>
+    <a href="#testimonials" class="nav-link" data-close-mobile>Testimonials</a>
+    <a href="#faq"          class="nav-link" data-close-mobile>FAQ</a>
+    <a href="#contact"      class="nav-link" data-close-mobile>Contact</a>
+    <hr style="border:none;border-top:1px solid var(--border);margin:8px 0;">
+    <a href="#contact" class="btn btn-primary" style="justify-content:center;margin-top:4px;" data-close-mobile>🎂 Order Now</a>
+  </nav>
+
+  <!-- ─── HERO SECTION ─────────────────────────────────────── -->
+  <section id="hero" aria-label="Hero section">
+    <!-- Background Blobs -->
+    <div class="hero-bg-blobs" aria-hidden="true">
+      <div class="hero-blob hero-blob-1"></div>
+      <div class="hero-blob hero-blob-2"></div>
+      <div class="hero-blob hero-blob-3"></div>
+    </div>
+    <!-- Floating Particles -->
+    <div class="hero-particles" id="heroParticles" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero-inner">
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <div class="hero-badge">🏡 Homemade &amp; Hygienic</div>
+          <div class="hero-title-script">Prince Home Made</div>
+          <h1 class="hero-title">Cakes &amp; Chocolates</h1>
+          <p class="hero-desc">
+            Every celebration deserves something made with real love, fresh ingredients, and a personal touch. 
+            From dreamy birthday cakes to indulgent handmade chocolates — crafted especially for you.
+          </p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary btn-lg">🎂 Order Now</a>
+            <a href="#products" class="btn btn-secondary btn-lg">✨ Explore Menu</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="hero-stat-number" data-count="500">0</span>
+              <span class="hero-stat-label">Happy Customers</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number" data-count="1200">0</span>
+              <span class="hero-stat-label">Orders Completed</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-number" data-count="50">0</span>
+              <span class="hero-stat-label">Varieties</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-visual-ring">
+            <div class="hero-visual-center">🎂</div>
+          </div>
+          <!-- Floating info cards -->
+          <div class="hero-float-item hero-float-1">
+            <span class="hero-float-item-emoji">⭐</span>
+            <div>
+              <strong style="display:block;font-size:0.9rem">5.0 Rating</strong>
+              <span style="font-size:0.72rem;color:var(--text-muted);font-weight:400">500+ Reviews</span>
+            </div>
+          </div>
+          <div class="hero-float-item hero-float-2">
+            <span class="hero-float-item-emoji">🍫</span>
+            <div>
+              <strong style="display:block;font-size:0.9rem">Fresh Daily</strong>
+              <span style="font-size:0.72rem;color:var(--text-muted);font-weight:400">Made to Order</span>
+            </div>
+          </div>
+          <div class="hero-float-item hero-float-3">
+            <span class="hero-float-item-emoji">🎁</span>
+            <div>
+              <strong style="display:block;font-size:0.9rem">Custom Boxes</strong>
+              <span style="font-size:0.72rem;color:var(--text-muted);font-weight:400">Gift Ready</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Separator -->
+  <div class="section-separator" aria-hidden="true">
+    <div class="sep-line"></div>
+    <span class="sep-icon">🍫</span>
+    <span class="sep-icon" style="animation-delay:0.3s">🎂</span>
+    <span class="sep-icon" style="animation-delay:0.6s">🍰</span>
+    <div class="sep-line"></div>
+  </div>
+
+  <!-- ─── ABOUT SECTION ────────────────────────────────────── -->
+  <section id="about" class="section" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Visual side -->
+        <div class="about-visual reveal-left">
+          <div class="about-visual-main">
+            🎂
+            <!-- Owner Card -->
+            <div class="about-owner-card">
+              <div class="about-owner-avatar">👩‍🍳</div>
+              <div>
+                <div class="about-owner-name">Arpita Pradip Singh</div>
+                <div class="about-owner-title">Founder &amp; Head Baker</div>
+              </div>
+            </div>
+            <!-- Badge Card -->
+            <div class="about-badge-card">
+              <div class="about-badge-num">5+</div>
+              <div class="about-badge-txt">YEARS<br/>CRAFTING</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content side -->
+        <div class="about-content reveal-right">
+          <div class="section-label">🍰 Our Story</div>
+          <h2 class="section-title" id="about-title">
+            Made with <span class="italic">Love</span>, Served with <span class="accent">Joy</span>
+          </h2>
+          <p style="font-size:1rem;color:var(--text-secondary);line-height:1.8;margin-bottom:16px;">
+            Welcome to <strong>Prince Home Made Cakes and Chocolates</strong> — a passionate home bakery founded by 
+            <strong>Arpita Pradip Singh</strong>. What started as a heartfelt desire to spread happiness through 
+            homemade sweets has blossomed into a beloved brand trusted by hundreds of families.
+          </p>
+          <p style="font-size:0.95rem;color:var(--text-muted);line-height:1.8;margin-bottom:24px;">
+            Every single item is crafted by hand using the freshest ingredients — no preservatives, no shortcuts. 
+            We believe that when food is made with care, it carries a special energy that makes every bite memorable. 
+            From elaborate custom cakes to delicate handmade chocolates, we pour our heart into every creation.
+          </p>
+
+          <div class="about-features">
+            <div class="about-feature">
+              <span class="about-feature-icon">🌿</span>
+              <span class="about-feature-text">100% Fresh Ingredients</span>
+            </div>
+            <div class="about-feature">
+              <span class="about-feature-icon">🧼</span>
+              <span class="about-feature-text">Hygienic Home Kitchen</span>
+            </div>
+            <div class="about-feature">
+              <span class="about-feature-icon">✏️</span>
+              <span class="about-feature-text">Fully Custom Designs</span>
+            </div>
+            <div class="about-feature">
+              <span class="about-feature-icon">🥚</span>
+              <span class="about-feature-text">Eggless Options Available</span>
+            </div>
+            <div class="about-feature">
+              <span class="about-feature-icon">💰</span>
+              <span class="about-feature-text">Affordable Pricing</span>
+            </div>
+            <div class="about-feature">
+              <span class="about-feature-icon">⏰</span>
+              <span class="about-feature-text">On-Time Delivery</span>
+            </div>
+          </div>
+
+          <div style="margin-top:32px;">
+            <a href="#contact" class="btn btn-primary">Get in Touch 💬</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Separator -->
+  <div class="section-separator" aria-hidden="true">
+    <div class="sep-line"></div>
+    <span class="sep-icon">✨</span>
+    <div class="sep-line"></div>
+  </div>
+
+  <!-- ─── WHY CHOOSE US ────────────────────────────────────── -->
+  <section id="why-us" class="section" aria-labelledby="why-title">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">🏆 Why We're Different</div>
+        <h2 class="section-title" id="why-title">Why Choose <span class="accent">Prince Cakes?</span></h2>
+        <p class="section-subtitle">
+          We don't just make cakes — we create memories. Here's what sets us apart from the rest.
+        </p>
+      </div>
+      <div class="why-grid" id="whyGrid">
+        <!-- Cards injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Separator -->
+  <div class="section-separator" aria-hidden="true">
+    <div class="sep-line"></div>
+    <span class="sep-icon">🎂</span>
+    <span class="sep-icon" style="animation-delay:0.5s">🍫</span>
+    <div class="sep-line"></div>
+  </div>
+
+  <!-- ─── PRODUCTS SECTION ─────────────────────────────────── -->
+  <section id="products" class="section" aria-labelledby="products-title">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">🎂 Our Menu</div>
+        <h2 class="section-title" id="products-title">Our <span class="italic">Sweet</span> <span class="accent">Creations</span></h2>
+        <p class="section-subtitle">Handcrafted with premium ingredients. Every item is freshly made to order just for you.</p>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="products-filter reveal" id="productsFilter"></div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productsGrid"></div>
+
+      <div style="text-align:center;margin-top:48px;" class="reveal">
+        <a href="#contact" class="btn btn-dark btn-lg">🍫 Custom Order Enquiry</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TODAY'S SPECIAL ──────────────────────────────────── -->
+  <section id="todays-special" class="section" aria-labelledby="special-title">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="section-header reveal">
+        <div class="section-label">⭐ Today's Special</div>
+        <h2 class="section-title" id="special-title">Spotlight <span style="color:var(--rose-light);font-style:italic;">Favourites</span></h2>
+        <p class="section-subtitle">Extraordinary creations that are stealing hearts today</p>
+      </div>
+      <div class="special-grid" id="specialGrid">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Separator -->
+  <div class="section-separator" aria-hidden="true">
+    <div class="sep-line" style="background:linear-gradient(90deg,transparent,rgba(240,201,106,0.3),transparent)"></div>
+    <span class="sep-icon">🌟</span>
+    <div class="sep-line" style="background:linear-gradient(90deg,transparent,rgba(240,201,106,0.3),transparent)"></div>
+  </div>
+
+  <!-- ─── BESTSELLERS ──────────────────────────────────────── -->
+  <section id="bestsellers" class="section" aria-labelledby="bestsellers-title">
+    <div class="container">
+      <div class="bestseller-header">
+        <div>
+          <div class="section-label">🔥 Most Loved</div>
+          <h2 class="section-title" id="bestsellers-title">Our <span class="accent">Bestsellers</span></h2>
+        </div>
+        <a href="#products" class="btn btn-secondary">View All →</a>
+      </div>
+      <div class="products-grid" id="bestsellersGrid"></div>
+    </div>
+  </section>
+
+  <!-- Section Separator -->
+  <div class="section-separator" aria-hidden="true">
+    <div class="sep-line"></div>
+    <span class="sep-icon">🎁</span>
+    <div class="sep-line"></div>
+  </div>
+
+  <!-- ─── OFFERS SECTION ───────────────────────────────────── -->
+  <section id="offers" class="section" aria-labelledby="offers-title">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">🏷️ Sweet Deals</div>
+        <h2 class="section-title" id="offers-title">Special <span class="italic">Offers</span> &amp; <span class="accent">Combos</span></h2>
+        <p class="section-subtitle">Enjoy exclusive deals, seasonal hampers, and festive packages made with extra love.</p>
+      </div>
+
+      <!-- Offer Cards injected by JS -->
+      <div class="offers-grid" id="offersGrid"></div>
+
+      <!-- Festival Seasons Banner -->
+      <div class="reveal" style="background:var(--gradient-choco);border-radius:var(--radius-xl);padding:40px;text-align:center;margin-top:20px;position:relative;overflow:hidden;">
+        <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(212,168,67,0.15) 0%,transparent 70%);pointer-events:none;"></div>
+        <div style="position:relative;z-index:1;">
+          <div style="font-size:2.5rem;margin-bottom:12px;">🪔 🎄 ❤️ 🎂 🤝</div>
+          <h3 style="font-family:var(--font-display);font-size:1.6rem;font-weight:800;color:var(--gold-light);margin-bottom:10px;">Festival Season is Here!</h3>
+          <p style="color:rgba(255,243,230,0.7);font-size:0.95rem;margin-bottom:24px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.7;">
+            Celebrate Diwali, Christmas, Eid, Rakhi, Valentine's Day, and every special occasion with our 
+            exclusive festive hampers and themed creations.
+          </p>
+          <a href="#contact" class="btn btn-primary btn-lg">🎁 Plan Your Celebration</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── GALLERY ──────────────────────────────────────────── -->
+  <section id="gallery" class="section" aria-labelledby="gallery-title">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">📸 Sweet Gallery</div>
+        <h2 class="section-title" id="gallery-title">A Feast for the <span class="accent">Eyes</span></h2>
+        <p class="section-subtitle">Every creation is a work of art. Hover over each piece to discover its story.</p>
+      </div>
+      <div class="gallery-grid reveal-scale" id="galleryGrid">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Separator -->
+  <div class="section-separator" aria-hidden="true">
+    <div class="sep-line"></div>
+    <span class="sep-icon">💬</span>
+    <div class="sep-line"></div>
+  </div>
+
+  <!-- ─── TESTIMONIALS ─────────────────────────────────────── -->
+  <section id="testimonials" class="section" aria-labelledby="test-title">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">💬 Happy Customers</div>
+        <h2 class="section-title" id="test-title">What Our <span class="italic">Sweet</span> <span class="accent">Family</span> Says</h2>
+        <p class="section-subtitle">Real words from real people who trusted us with their most special moments.</p>
+      </div>
+      <div class="testimonials-slider reveal">
+        <div class="testimonials-track" id="testimonialsTrack"></div>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-btn" id="testPrev" aria-label="Previous review">◀</button>
+        <div class="slider-dots" id="testDots"></div>
+        <button class="slider-btn" id="testNext" aria-label="Next review">▶</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Separator -->
+  <div class="section-separator" aria-hidden="true">
+    <div class="sep-line"></div>
+    <span class="sep-icon">🍰</span>
+    <span class="sep-icon" style="animation-delay:0.3s">🎂</span>
+    <div class="sep-line"></div>
+  </div>
+
+  <!-- ─── ORDER PROCESS ────────────────────────────────────── -->
+  <section id="order-process" class="section" aria-labelledby="order-title">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">📋 How It Works</div>
+        <h2 class="section-title" id="order-title">Ordering is <span class="accent">Simple</span> &amp; <span class="italic">Sweet</span></h2>
+        <p class="section-subtitle">Just 4 easy steps from craving to celebration!</p>
+      </div>
+      <div class="order-steps" id="orderSteps">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ANIMATED COUNTERS ────────────────────────────────── -->
+  <section id="counters" aria-label="Statistics">
+    <div class="container">
+      <div class="counters-grid" id="countersGrid">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Separator -->
+  <div class="section-separator" style="background:var(--bg-secondary);" aria-hidden="true">
+    <div class="sep-line"></div>
+    <span class="sep-icon">❓</span>
+    <div class="sep-line"></div>
+  </div>
+
+  <!-- ─── FAQ SECTION ──────────────────────────────────────── -->
+  <section id="faq" class="section" aria-labelledby="faq-title" style="background:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">❓ Frequently Asked</div>
+        <h2 class="section-title" id="faq-title">Got <span class="italic">Questions?</span> <span class="accent">We Have Answers!</span></h2>
+        <p class="section-subtitle">Everything you need to know about ordering from us.</p>
+      </div>
+      <div class="faq-list reveal" id="faqList">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Separator -->
+  <div class="section-separator" aria-hidden="true">
+    <div class="sep-line"></div>
+    <span class="sep-icon">📞</span>
+    <div class="sep-line"></div>
+  </div>
+
+  <!-- ─── CONTACT SECTION ──────────────────────────────────── -->
+  <section id="contact" class="section" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-label">📞 Get In Touch</div>
+        <h2 class="section-title" id="contact-title">Let's Create Something <span class="accent">Delicious</span> <span class="italic">Together!</span></h2>
+        <p class="section-subtitle">Ready to order? Have a custom idea? We'd love to hear from you!</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info reveal-left">
+          <div class="contact-item">
+            <div class="contact-item-icon">🏪</div>
+            <div>
+              <div class="contact-item-label">Business</div>
+              <div class="contact-item-value">Prince Home Made Cakes &amp; Chocolates<br/><small style="color:var(--text-muted);font-weight:400">Owner: Arpita Pradip Singh</small></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📱</div>
+            <div>
+              <div class="contact-item-label">Phone / WhatsApp</div>
+              <div class="contact-item-value">
+                <a href="tel:+91XXXXXXXXXX">+91 XXXX-XXX-XXX</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📧</div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-value">
+                <a href="mailto:princecakes@email.com">princecakes@email.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <div class="contact-item-label">Location</div>
+              <div class="contact-item-value">Your City, State, India — 400 XXX<br/><small style="color:var(--text-muted);font-weight:400">Home Delivery &amp; Pick-up Available</small></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🕐</div>
+            <div>
+              <div class="contact-item-label">Business Hours</div>
+              <div class="contact-item-value">
+                <div class="hours-grid">
+                  <div class="hours-row"><span class="hours-day">Mon–Sat</span><span class="hours-time">9:00 AM – 8:00 PM</span></div>
+                  <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">10:00 AM – 6:00 PM</span></div>
+                  <div class="hours-row" style="grid-column:span 2;"><span class="hours-day" style="color:var(--rose);">⚠️ Same-day orders subject to availability</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Map placeholder -->
+          <div class="map-placeholder">
+            <span class="map-placeholder-emoji">🗺️</span>
+            <span>Your Location, City, India</span>
+            <a href="https://maps.google.com" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="reveal-right">
+          <div style="background:var(--bg-card);border-radius:var(--radius-xl);padding:36px;border:1px solid var(--border);box-shadow:var(--shadow-soft);">
+            <h3 style="font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:var(--text-primary);margin-bottom:8px;">Send an Order Enquiry</h3>
+            <p style="font-size:0.84rem;color:var(--text-muted);margin-bottom:24px;">Fill in the details and we'll get back to you within a few hours!</p>
+
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="name">Your Name <span class="required">*</span></label>
+                  <input type="text" id="name" name="name" class="form-input" placeholder="E.g. Priya Sharma" required />
+                  <div class="form-error" id="nameError"></div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="phone">Phone / WhatsApp <span class="required">*</span></label>
+                  <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 98765 43210" required />
+                  <div class="form-error" id="phoneError"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="yourname@email.com" />
+                <div class="form-error" id="emailError"></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="occasion">Occasion <span class="required">*</span></label>
+                  <select id="occasion" name="occasion" class="form-select form-input" required>
+                    <option value="">Select occasion…</option>
+                    <option value="birthday">🎂 Birthday</option>
+                    <option value="anniversary">💑 Anniversary</option>
+                    <option value="wedding">💍 Wedding</option>
+                    <option value="festival">🪔 Festival</option>
+                    <option value="corporate">🏢 Corporate Gift</option>
+                    <option value="custom">✨ Custom Order</option>
+                    <option value="other">📦 Other</option>
+                  </select>
+                  <div class="form-error" id="occasionError"></div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="delivery">Delivery Date <span class="required">*</span></label>
+                  <input type="date" id="delivery" name="delivery" class="form-input" required />
+                  <div class="form-error" id="deliveryError"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="message">Order Details / Message <span class="required">*</span></label>
+                <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your cake/chocolate requirements — flavour, design, size, dietary preferences, etc." required></textarea>
+                <div class="form-error" id="messageError"></div>
+              </div>
+              <div class="form-success" id="formSuccess">
+                ✅ Thank you! We've received your enquiry and will contact you shortly. 🎂
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:14px;" id="submitBtn">
+                🎂 Send My Order Enquiry
+              </button>
+              <p style="font-size:0.76rem;color:var(--text-muted);text-align:center;margin-top:12px;">
+                Or reach us directly on <strong>WhatsApp</strong> for faster response! 💬
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────── -->
+  <footer id="footer" aria-label="Footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <a href="#hero" class="nav-logo">
+            <div class="nav-logo-icon">🎂</div>
+            <div class="nav-logo-text">
+              <span class="nav-logo-name">Prince Cakes</span>
+              <span class="nav-logo-sub">Homemade with Love</span>
+            </div>
+          </a>
+          <div class="footer-tagline">"Every bite tells a story of love ✨"</div>
+          <p class="footer-brand-desc">
+            Handcrafted cakes and chocolates made with the finest ingredients by Arpita Pradip Singh. 
+            Making every celebration more delicious, one creation at a time.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram" title="Follow on Instagram">📸</a>
+            <a href="#" class="social-link" aria-label="Facebook" title="Like on Facebook">👍</a>
+            <a href="#" class="social-link" aria-label="WhatsApp" title="Chat on WhatsApp">💬</a>
+            <a href="#" class="social-link" aria-label="YouTube" title="Watch on YouTube">▶️</a>
+            <a href="#" class="social-link" aria-label="Pinterest" title="Pin on Pinterest">📌</a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <div class="footer-links">
+            <a href="#hero"         class="footer-link">Home</a>
+            <a href="#about"        class="footer-link">About Us</a>
+            <a href="#products"     class="footer-link">Our Products</a>
+            <a href="#offers"       class="footer-link">Special Offers</a>
+            <a href="#gallery"      class="footer-link">Gallery</a>
+            <a href="#testimonials" class="footer-link">Reviews</a>
+            <a href="#faq"          class="footer-link">FAQ</a>
+            <a href="#contact"      class="footer-link">Contact Us</a>
+          </div>
+        </div>
+
+        <!-- Products Links -->
+        <div>
+          <div class="footer-col-title">Products</div>
+          <div class="footer-links">
+            <a href="#products" class="footer-link">Birthday Cakes</a>
+            <a href="#products" class="footer-link">Anniversary Cakes</a>
+            <a href="#products" class="footer-link">Custom Cakes</a>
+            <a href="#products" class="footer-link">Chocolate Boxes</a>
+            <a href="#products" class="footer-link">Homemade Chocolates</a>
+            <a href="#products" class="footer-link">Festival Specials</a>
+            <a href="#contact"  class="footer-link">Custom Orders</a>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <div class="footer-col-title">Get In Touch</div>
+          <div class="footer-contact-items">
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon">👩‍🍳</span>
+              <div class="footer-contact-text">
+                <strong>Arpita Pradip Singh</strong>
+                Founder &amp; Head Baker
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon">📱</span>
+              <div class="footer-contact-text">
+                <strong>+91 XXXX-XXX-XXX</strong>
+                WhatsApp &amp; Calls Welcome
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon">📧</span>
+              <div class="footer-contact-text">
+                <strong>princecakes@email.com</strong>
+                Available Mon–Sat
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon">📍</span>
+              <div class="footer-contact-text">
+                <strong>Your City, State, India</strong>
+                Home Delivery &amp; Pick-up
+              </div>
+            </div>
+            <div class="footer-contact-item">
+              <span class="footer-contact-icon">🕐</span>
+              <div class="footer-contact-text">
+                <strong>Mon–Sat: 9 AM – 8 PM</strong>
+                Sun: 10 AM – 6 PM
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-copyright">
+        © 2025 Prince Home Made Cakes &amp; Chocolates. Made with <span class="heart">❤️</span> by Arpita Pradip Singh. All rights reserved.
+      </div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Return Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── WhatsApp Float Button ────────────────────────────── -->
+  <div class="whatsapp-float">
+    <div class="whatsapp-label">Order on WhatsApp! 🎂</div>
+    <a href="https://wa.me/91XXXXXXXXXX?text=Hi!%20I'd%20like%20to%20order%20a%20cake%20%F0%9F%8E%82"
+       class="whatsapp-btn"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Order on WhatsApp">
+      💬
+    </a>
+  </div>
+
+  <!-- ─── Back To Top ──────────────────────────────────────── -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+    <span>▲</span>
+  </button>
+
+  <!-- ─── Product Quick-View Modal ────────────────────────── -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal" id="modal">
+      <div class="modal-img" id="modalImg">
+        <button class="modal-close" id="modalClose" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-badge" id="modalBadge"></div>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <p class="modal-desc" id="modalDesc"></p>
+        <div class="modal-details" id="modalDetails"></div>
+        <div class="modal-price-row">
+          <div>
+            <span class="modal-price" id="modalPrice"></span>
+            <span class="modal-original" id="modalOriginal"></span>
+          </div>
+          <div class="modal-rating">
+            <span class="modal-stars" id="modalStars"></span>
+            <span class="modal-reviews" id="modalReviews"></span>
+          </div>
+        </div>
+        <div class="modal-tags" id="modalTags"></div>
+        <div class="modal-actions">
+          <a href="#contact" class="btn btn-primary" id="modalOrderBtn">🎂 Order Now</a>
+          <a href="https://wa.me/91XXXXXXXXXX" class="btn btn-dark" target="_blank" rel="noopener">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── JS Files ─────────────────────────────────────────── -->
+  <script src="js/products.js"></script>
+  <script src="js/theme-toggle.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+{
+  "categories": [
+    {
+      "id": "birthday-cakes",
+      "name": "Birthday Cakes",
+      "icon": "🎂",
+      "description": "Make every birthday unforgettable with our handcrafted cakes"
+    },
+    {
+      "id": "anniversary-cakes",
+      "name": "Anniversary Cakes",
+      "icon": "💑",
+      "description": "Celebrate love with elegantly designed anniversary cakes"
+    },
+    {
+      "id": "custom-cakes",
+      "name": "Custom Cakes",
+      "icon": "✨",
+      "description": "Your imagination, our creation — fully personalized cakes"
+    },
+    {
+      "id": "chocolate-boxes",
+      "name": "Chocolate Boxes",
+      "icon": "🎁",
+      "description": "Luxurious gift boxes filled with handmade chocolates"
+    },
+    {
+      "id": "homemade-chocolates",
+      "name": "Homemade Chocolates",
+      "icon": "🍫",
+      "description": "Pure, rich, and indulgent homemade chocolate delights"
+    },
+    {
+      "id": "festival-specials",
+      "name": "Festival Specials",
+      "icon": "🪔",
+      "description": "Special creations for every festive occasion"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "category": "birthday-cakes",
+      "name": "Dreamy Vanilla Cloud Cake",
+      "description": "Light, fluffy vanilla sponge layered with fresh cream and seasonal fruits. A classic birthday favourite loved by all ages.",
+      "price": 599,
+      "originalPrice": 750,
+      "rating": 4.9,
+      "reviews": 128,
+      "badge": "Best Seller",
+      "badgeColor": "#FF6B6B",
+      "emoji": "🎂",
+      "tags": ["eggless-available", "custom-size"],
+      "weight": "500g",
+      "serves": "4-6 people"
+    },
+    {
+      "id": 2,
+      "category": "birthday-cakes",
+      "name": "Chocolate Fantasy Dream",
+      "description": "Rich dark chocolate cake with ganache frosting, chocolate shavings, and a surprise chocolate truffle centre. Pure indulgence.",
+      "price": 749,
+      "originalPrice": 900,
+      "rating": 5.0,
+      "reviews": 214,
+      "badge": "Fan Favourite",
+      "badgeColor": "#6B4226",
+      "emoji": "🎉",
+      "tags": ["eggless-available", "bestseller"],
+      "weight": "500g",
+      "serves": "4-6 people"
+    },
+    {
+      "id": 3,
+      "category": "birthday-cakes",
+      "name": "Rainbow Funfetti Blast",
+      "description": "Colourful layers of joy! Perfect for kids' birthdays with vibrant rainbow sponge and fluffy buttercream frosting.",
+      "price": 699,
+      "originalPrice": 850,
+      "rating": 4.8,
+      "reviews": 96,
+      "badge": "Kids' Special",
+      "badgeColor": "#FF69B4",
+      "emoji": "🌈",
+      "tags": ["eggless-available", "kids-special"],
+      "weight": "500g",
+      "serves": "4-6 people"
+    },
+    {
+      "id": 4,
+      "category": "anniversary-cakes",
+      "name": "Rose Gold Elegance Cake",
+      "description": "Elegant red velvet cake with rose gold fondant roses, champagne frosting, and gold leaf accents. Romance in every bite.",
+      "price": 999,
+      "originalPrice": 1250,
+      "rating": 4.9,
+      "reviews": 87,
+      "badge": "Premium",
+      "badgeColor": "#C9A96E",
+      "emoji": "💍",
+      "tags": ["premium", "custom-design"],
+      "weight": "1kg",
+      "serves": "8-10 people"
+    },
+    {
+      "id": 5,
+      "category": "anniversary-cakes",
+      "name": "Golden Years Tier Cake",
+      "description": "A stunning two-tier celebration cake with golden accents, handcrafted sugar flowers, and premium vanilla bean cream.",
+      "price": 1499,
+      "originalPrice": 1800,
+      "rating": 5.0,
+      "reviews": 54,
+      "badge": "Luxury",
+      "badgeColor": "#DAA520",
+      "emoji": "🥂",
+      "tags": ["luxury", "tiered", "custom-message"],
+      "weight": "2kg",
+      "serves": "15-20 people"
+    },
+    {
+      "id": 6,
+      "category": "custom-cakes",
+      "name": "Photo Print Designer Cake",
+      "description": "Your cherished photo beautifully printed on a delicious cake. Share memories with every slice. Any design, any occasion.",
+      "price": 849,
+      "originalPrice": 999,
+      "rating": 4.8,
+      "reviews": 173,
+      "badge": "Trending",
+      "badgeColor": "#7B68EE",
+      "emoji": "📸",
+      "tags": ["custom", "photo-print", "any-occasion"],
+      "weight": "500g",
+      "serves": "4-6 people"
+    },
+    {
+      "id": 7,
+      "category": "custom-cakes",
+      "name": "3D Character Sculpted Cake",
+      "description": "Breathtaking sculpted cakes shaped into characters, objects, or themes. Perfect for unique celebrations that need wow-factor.",
+      "price": 1299,
+      "originalPrice": 1600,
+      "rating": 4.9,
+      "reviews": 42,
+      "badge": "Wow Factor",
+      "badgeColor": "#20B2AA",
+      "emoji": "🎭",
+      "tags": ["custom", "sculpted", "premium"],
+      "weight": "1kg",
+      "serves": "8-10 people"
+    },
+    {
+      "id": 8,
+      "category": "chocolate-boxes",
+      "name": "Luxury Assorted Gift Box",
+      "description": "A curated selection of 16 handcrafted chocolates in milk, dark, and white varieties. Beautifully boxed for gifting.",
+      "price": 549,
+      "originalPrice": 699,
+      "rating": 4.9,
+      "reviews": 312,
+      "badge": "Gift Ready",
+      "badgeColor": "#FF6B35",
+      "emoji": "🎁",
+      "tags": ["gift", "assorted", "premium-box"],
+      "pieces": "16 pcs",
+      "weight": "300g"
+    },
+    {
+      "id": 9,
+      "category": "chocolate-boxes",
+      "name": "Festive Hamper Box",
+      "description": "An opulent hamper with 24 handmade chocolates, chocolate bark, fudge pieces, and truffles. The ultimate celebration gift.",
+      "price": 899,
+      "originalPrice": 1100,
+      "rating": 5.0,
+      "reviews": 198,
+      "badge": "Best Gift",
+      "badgeColor": "#8B0000",
+      "emoji": "✨",
+      "tags": ["hamper", "festive", "large-box"],
+      "pieces": "24 pcs + extras",
+      "weight": "500g"
+    },
+    {
+      "id": 10,
+      "category": "homemade-chocolates",
+      "name": "Belgian Dark Truffles",
+      "description": "Velvety smooth dark chocolate truffles made with imported Belgian cocoa. Dusted with premium cocoa powder. Pure luxury.",
+      "price": 349,
+      "originalPrice": 449,
+      "rating": 4.9,
+      "reviews": 267,
+      "badge": "Best Seller",
+      "badgeColor": "#3D1C02",
+      "emoji": "🍫",
+      "tags": ["dark-chocolate", "truffles", "bestseller"],
+      "pieces": "12 pcs",
+      "weight": "150g"
+    },
+    {
+      "id": 11,
+      "category": "homemade-chocolates",
+      "name": "Milk Chocolate Barks",
+      "description": "Handmade milk chocolate barks topped with dry fruits, nuts, and edible flowers. A sophisticated sweet treat.",
+      "price": 299,
+      "originalPrice": 399,
+      "rating": 4.7,
+      "reviews": 143,
+      "badge": "New",
+      "badgeColor": "#228B22",
+      "emoji": "🌸",
+      "tags": ["milk-chocolate", "barks", "dry-fruits"],
+      "pieces": "6 bars",
+      "weight": "200g"
+    },
+    {
+      "id": 12,
+      "category": "homemade-chocolates",
+      "name": "Stuffed Chocolate Bonbons",
+      "description": "Shell chocolates stuffed with praline, hazelnut cream, caramel, and ganache fillings. Each one a little surprise inside.",
+      "price": 399,
+      "originalPrice": 499,
+      "rating": 4.8,
+      "reviews": 189,
+      "badge": "Crowd Pleaser",
+      "badgeColor": "#B8860B",
+      "emoji": "💫",
+      "tags": ["bonbons", "stuffed", "assorted-fillings"],
+      "pieces": "10 pcs",
+      "weight": "180g"
+    },
+    {
+      "id": 13,
+      "category": "festival-specials",
+      "name": "Diwali Mithai Chocolate Box",
+      "description": "Fusion of Indian mithai flavours in premium chocolate form — kaju katli, gulab jamun, and paan flavoured chocolates.",
+      "price": 649,
+      "originalPrice": 799,
+      "rating": 5.0,
+      "reviews": 301,
+      "badge": "Festival Hit",
+      "badgeColor": "#FF8C00",
+      "emoji": "🪔",
+      "tags": ["diwali", "festive", "fusion"],
+      "pieces": "20 pcs",
+      "weight": "350g"
+    },
+    {
+      "id": 14,
+      "category": "festival-specials",
+      "name": "Rakhi Sibling Love Hamper",
+      "description": "A heartfelt Rakhi special hamper with customised chocolates, a mini cake, and a rakhi — everything wrapped with love.",
+      "price": 799,
+      "originalPrice": 999,
+      "rating": 4.9,
+      "reviews": 224,
+      "badge": "Seasonal",
+      "badgeColor": "#DC143C",
+      "emoji": "🤝",
+      "tags": ["rakhi", "hamper", "siblings"],
+      "weight": "600g",
+      "serves": "Complete gifting package"
+    },
+    {
+      "id": 15,
+      "category": "festival-specials",
+      "name": "Valentine Heart Cake",
+      "description": "Heart-shaped red velvet cake with rose petal decoration, love-themed fondant toppers, and strawberry cream filling.",
+      "price": 849,
+      "originalPrice": 999,
+      "rating": 5.0,
+      "reviews": 167,
+      "badge": "Love Special",
+      "badgeColor": "#FF1493",
+      "emoji": "❤️",
+      "tags": ["valentine", "heart-shaped", "romantic"],
+      "weight": "700g",
+      "serves": "6-8 people"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Priya Sharma",
+      "location": "Mumbai",
+      "rating": 5,
+      "text": "I ordered a custom birthday cake for my daughter's 5th birthday and Arpita ji created something absolutely magical! The unicorn cake was so beautiful that everyone was taking photos before cutting it. The taste was divine — moist, fresh, and not overly sweet. Will definitely order again!",
+      "avatar": "PS",
+      "avatarColor": "#FF6B6B",
+      "date": "December 2024",
+      "occasion": "Birthday Cake"
+    },
+    {
+      "id": 2,
+      "name": "Rahul & Sneha Patil",
+      "location": "Pune",
+      "rating": 5,
+      "text": "We ordered our anniversary cake from Prince Home Made Cakes and it exceeded all expectations. The rose gold two-tier cake was absolutely stunning. Every guest at the party complimented the taste and design. Arpita ji is truly talented and dedicated to her craft.",
+      "avatar": "RP",
+      "avatarColor": "#6B4226",
+      "date": "November 2024",
+      "occasion": "Anniversary Cake"
+    },
+    {
+      "id": 3,
+      "name": "Meera Nair",
+      "location": "Nashik",
+      "rating": 5,
+      "text": "The Belgian dark truffles are hands down the best homemade chocolates I have ever tasted! I ordered the festive hamper for Diwali and every single piece was perfect. Rich, smooth, and made with such care. Already planning to order for Christmas!",
+      "avatar": "MN",
+      "avatarColor": "#20B2AA",
+      "date": "October 2024",
+      "occasion": "Diwali Chocolates"
+    },
+    {
+      "id": 4,
+      "name": "Vikram Desai",
+      "location": "Nagpur",
+      "rating": 5,
+      "text": "Ordered a photo cake for my mother's 60th birthday. The quality of the print and the freshness of the cake was outstanding. My mother was moved to tears seeing her favourite photo on such a beautifully crafted cake. Thank you Arpita ji for the wonderful memories!",
+      "avatar": "VD",
+      "avatarColor": "#7B68EE",
+      "date": "September 2024",
+      "occasion": "Photo Cake"
+    },
+    {
+      "id": 5,
+      "name": "Anita Kulkarni",
+      "location": "Aurangabad",
+      "rating": 5,
+      "text": "I have been ordering chocolates from Prince Home Made Cakes for over a year now and the consistency is remarkable. Each box is a delight. The bonbons with hazelnut filling are my absolute favourite. Great packaging, prompt delivery, and always fresh!",
+      "avatar": "AK",
+      "avatarColor": "#FF69B4",
+      "date": "August 2024",
+      "occasion": "Chocolate Box"
+    },
+    {
+      "id": 6,
+      "name": "Sanjay Joshi",
+      "location": "Solapur",
+      "rating": 5,
+      "text": "Got a custom 3D sculpted cake for my son's superhero themed party. The attention to detail was incredible — I could not believe it was homemade! Arpita ji truly has a gift. Price was very reasonable for the quality. 100% recommend to everyone.",
+      "avatar": "SJ",
+      "avatarColor": "#DAA520",
+      "date": "July 2024",
+      "occasion": "3D Custom Cake"
+    }
+  ],
+  "offers": [
+    {
+      "id": 1,
+      "title": "New Customer Welcome",
+      "description": "First order gets 15% off any cake",
+      "code": "WELCOME15",
+      "discount": "15% OFF",
+      "emoji": "🎉",
+      "color": "#FF6B6B",
+      "validTill": "Limited time offer"
+    },
+    {
+      "id": 2,
+      "title": "Bulk Order Discount",
+      "description": "Order 3 or more items and save big",
+      "code": "BULK20",
+      "discount": "20% OFF",
+      "emoji": "🛍️",
+      "color": "#6B4226",
+      "validTill": "Always available"
+    },
+    {
+      "id": 3,
+      "title": "Festival Hamper Special",
+      "description": "Buy any festive hamper and get free ribbon packaging",
+      "code": "FESTIVE",
+      "discount": "FREE GIFT",
+      "emoji": "🪔",
+      "color": "#FF8C00",
+      "validTill": "Seasonal"
+    }
+  ],
+  "faqs": [
+    {
+      "id": 1,
+      "question": "Do you take custom cake orders?",
+      "answer": "Absolutely! Custom cakes are our speciality. You can share your ideas, themes, colours, and preferences with us, and we will bring your dream cake to life. We accept orders for birthdays, anniversaries, weddings, corporate events, and any special occasion. Just contact us to discuss your vision!"
+    },
+    {
+      "id": 2,
+      "question": "How many days in advance should I place my order?",
+      "answer": "We recommend placing orders at least 3–5 days in advance for standard cakes and 5–7 days for custom or sculpted cakes. For large orders or festival seasons, booking 10+ days ahead is advisable to ensure perfect preparation and timely delivery."
+    },
+    {
+      "id": 3,
+      "question": "Do you provide home delivery?",
+      "answer": "Yes, we offer home delivery within our service area. Delivery charges may apply depending on distance. We also offer pick-up from our home kitchen at a pre-arranged time. Please contact us to confirm delivery availability for your location."
+    },
+    {
+      "id": 4,
+      "question": "Are eggless options available?",
+      "answer": "Yes! All our cakes are available in eggless variants without compromising on taste or quality. Our eggless recipes have been perfected over years and are absolutely delicious. Please mention your preference while placing the order."
+    },
+    {
+      "id": 5,
+      "question": "Can chocolates be gifted in custom boxes?",
+      "answer": "Definitely! We offer beautiful customised chocolate gift boxes with personalised messages, ribbons, and wrapping. These make perfect gifts for birthdays, Diwali, Rakhi, Valentine's Day, corporate gifting, and more. Just let us know your requirements!"
+    },
+    {
+      "id": 6,
+      "question": "What payment methods do you accept?",
+      "answer": "We accept all major payment methods including UPI (GPay, PhonePe, Paytm), bank transfer, and cash on delivery/pick-up. Payment details will be shared at the time of order confirmation."
+    },
+    {
+      "id": 7,
+      "question": "Do you cater to bulk or event orders?",
+      "answer": "Yes, we are happy to take bulk orders for weddings, corporate events, baby showers, kitty parties, and any large gatherings. Special discounts are available for bulk orders. Contact us early so we can plan and prepare accordingly."
+    },
+    {
+      "id": 8,
+      "question": "How are the products packaged?",
+      "answer": "All our products are carefully packaged in food-grade, hygienic packaging. Cakes are packed in sturdy boxes to maintain their shape. Chocolates come in elegant gift-ready packaging. We ensure every item reaches you in perfect condition."
+    }
+  ]
+}

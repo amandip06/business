@@ -18,7 +18,7 @@
   ────────────────────────────────────────────────────────── */
   async function loadData() {
     try {
-      const res = await fetch('data/products.json');
+      const res = await fetch('products.json');
       if (!res.ok) throw new Error('HTTP ' + res.status);
       allData = await res.json();
       renderAll();
